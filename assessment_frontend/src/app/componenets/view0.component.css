@@ -1,0 +1,9 @@
+.box-it {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px gray solid;
+  }
+
+  tr {
+    height: 4vh;
+  }
