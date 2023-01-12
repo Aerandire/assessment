@@ -1,0 +1,51 @@
+
+
+<table>
+    <tr>
+      <td> <label for="image">Image:</label> </td>
+      <td>
+        <img id="image" src="" alt="">
+      </td>
+    <tr>
+    <tr>
+      <td> <label for="name">Name:</label> </td>
+      <td>
+        <input type="text" size="50" id="name" placeholder="Your name here" formControlName="name">
+      </td>
+    <tr>
+      <td> <label for="email">Email:</label> </td>
+      <td>
+        <input type="email" size="50" id="email" placeholder="Your email" formControlName="email">
+      </td>
+    </tr>
+    <tr>
+        <td> <label for="phone">Phone:</label> </td>
+        <td>
+          <input type="text" size="20" id="phone" placeholder="Your phone" formControlName="phone">
+        </td>
+    </tr>
+    <tr>
+        <td> <label for="title">Title:</label> </td>
+        <td>
+          <input type="text" size="50" id="title" placeholder="Your title" formControlName="title">
+        </td>
+    </tr>
+    <tr>
+        <td> <label for="description">Description:</label> </td>
+        <td>
+          <textarea cols="40" row="5" id="description" placeholder="Your description" formControlName="description"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>
+                <button type="button" (click)="cancel()">Cancel</button>
+            </div>
+        </td>
+        <td>
+          <div>
+            <button type="submit">Confirm</button>
+          </div>
+        </td>
+      </tr>
+  </table>

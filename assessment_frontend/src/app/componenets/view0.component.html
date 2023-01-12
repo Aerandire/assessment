@@ -33,7 +33,7 @@
         <tr>
             <td> <label for="image">Image:</label> </td>
             <td>
-              <input type="file" size="50" id="image" placeholder="Your image file" formControlName="image">
+              <input type="file" id="image" accept="image/*" formControlName="image" #imageFile>
             </td>
         </tr>
         <tr>

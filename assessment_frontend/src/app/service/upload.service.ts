@@ -17,7 +17,7 @@ export class UploadService {
 
   postListing(formData: FormData) {
     return firstValueFrom(
-        this.http.post<FormData>('api/posting', formData)
+        this.http.post<FormData>('/api/posting', formData)
     )
   }
 }

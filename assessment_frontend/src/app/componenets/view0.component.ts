@@ -11,6 +11,7 @@ import { UploadService } from '../service/upload.service';
 })
 export class View0Component implements OnInit {
 
+  @ViewChild('imageFile') imageFile!: ElementRef;
   path = [ '' ]
   form!: FormGroup
 
@@ -25,7 +26,7 @@ export class View0Component implements OnInit {
     return this.fb.group({
       name: this.fb.control<string>('',[Validators.required, Validators.minLength(3)]),
       email: this.fb.control<string>('', [Validators.required, Validators.email, Validators.maxLength(128)]),
-      phone: this.fb.control<string>(''),
+      phone: this.fb.control<string>('', [Validators.required]),
       title: this.fb.control<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(128)]),
       description: this.fb.control<string>('',[Validators.required]),
       image: this.fb.control<any>('',[Validators.required]),
@@ -43,11 +44,12 @@ export class View0Component implements OnInit {
     formData.append('phone', this.form.controls['phone'].value);
     formData.append('title', this.form.controls['title'].value);
     formData.append('description', this.form.controls['description'].value);
-    formData.append('image', this.form.controls['image'].value);
+    formData.set('image', this.imageFile.nativeElement.files[0]);
 
     this.uploadSvc.postListing(formData)
       .then(result=> {
-        this.router.navigate(['/view1', email])
+        console.info(result)
+        this.router.navigate(['/view1'])
       })
   }
 
